@@ -17,9 +17,10 @@ Route::get('/',function(){
     return view('welcome');
 });
 
-Route::get('/home',function(){
-    return view('home');
-});
+Route::get('/home', 'App\Http\Controllers\HomeController@index');
+
+// Route::get('/menu', 'App\Http\Controllers\MenuController@index');
+
 
 Route::get('/menu',function(){
     $arrMenu= [
