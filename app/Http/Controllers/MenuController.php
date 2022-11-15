@@ -1,12 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-use Nette\Utils\ArrayList;
 
 class MenuController extends Controller{
 
+    
     public function index(){
-        return view('menu');
+        $arrMenu= [
+            'Nasi Goreng', 'Bakmi Ayam','Bakso Goreng'
+        ];
+        return view('menu')->with('menu', $arrMenu);
     }
 
 }
