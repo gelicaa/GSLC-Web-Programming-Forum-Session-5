@@ -14,17 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',function(){
-    return view('welcome');
+    return view('home');
 });
 
-Route::get('/home', 'App\Http\Controllers\HomeController@index');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
-// Route::get('/menu', 'App\Http\Controllers\MenuController@index');
-
-
-Route::get('/menu',function(){
-    $arrMenu= [
-        'Nasi Goreng', 'Bakmi Ayam','Bakso Goreng'
-    ];
-    return view('menu')->with('menu', $arrMenu);
-});
+Route::get('/menu', [App\Http\Controllers\MenuController::class, 'index']);
